@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Collider2D))]
 public class FlockAgent : MonoBehaviour
 {
-    //Flock agentsFlock
+    Flock agentFlock;
 
     private Collider2D _agentCollider;
     public Collider2D AgentCollider { get => _agentCollider; }
@@ -20,6 +20,11 @@ public class FlockAgent : MonoBehaviour
         {
             Debug.Log(gameObject.name + " is missing a collider");
         }
+    }
+
+    public void Initialise(Flock flock)
+    {
+        agentFlock = flock;
     }
 
     public void Move(Vector2 velocity)
