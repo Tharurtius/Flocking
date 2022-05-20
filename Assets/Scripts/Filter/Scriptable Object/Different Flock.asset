@@ -9,6 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62b334d9498c90c49865e0cc8c5a4998, type: 3}
-  m_Name: Avoidance
+  m_Script: {fileID: 11500000, guid: d8f22de554fa91c46b7ea880e9dcb3e7, type: 3}
+  m_Name: Different Flock
   m_EditorClassIdentifier: 

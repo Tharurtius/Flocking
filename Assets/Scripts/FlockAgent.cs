@@ -5,7 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(Collider2D))]
 public class FlockAgent : MonoBehaviour
 {
-    Flock agentFlock;
+    Flock _agentFlock;
+    public Flock AgentFlock { get => _agentFlock; }
 
     private Collider2D _agentCollider;
     public Collider2D AgentCollider { get => _agentCollider; }
@@ -24,7 +25,7 @@ public class FlockAgent : MonoBehaviour
 
     public void Initialise(Flock flock)
     {
-        agentFlock = flock;
+        _agentFlock = flock;
     }
 
     public void Move(Vector2 velocity)
