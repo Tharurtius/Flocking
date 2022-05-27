@@ -13,7 +13,7 @@ public class SameFlockFilter : ContextFilter
         {
             FlockAgent itemAgent = item.GetComponent<FlockAgent>();
 
-            if (agent != null)
+            if (itemAgent != null)
             {
                 if (itemAgent.AgentFlock == agent.AgentFlock)
                 {

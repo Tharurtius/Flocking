@@ -20,6 +20,6 @@ MonoBehaviour:
   - behaviour: {fileID: 11400000, guid: 200ab30ae3c12ce45aeefa05d863ed0c, type: 2}
     weights: 1
   - behaviour: {fileID: 11400000, guid: 67b8e4a65a15af544ad6b369edadad7e, type: 2}
-    weights: 1
-  - behaviour: {fileID: 11400000, guid: 67b8e4a65a15af544ad6b369edadad7e, type: 2}
+    weights: 1.1
+  - behaviour: {fileID: 11400000, guid: a84c4916e84223e4c9c3f26e7f2725e5, type: 2}
     weights: 10
