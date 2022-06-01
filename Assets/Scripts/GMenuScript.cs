@@ -16,6 +16,7 @@ public class GMenuScript : MonoBehaviour
     {
         
     }
+    //generic quit script
     public void Quit()
     {
         Application.Quit();
@@ -23,8 +24,21 @@ public class GMenuScript : MonoBehaviour
         UnityEditor.EditorApplication.isPlaying = false;
 #endif
     }
+    //generic scene change script
     public void ChangeScene(int sceneIndex)
     {
         SceneManager.LoadScene(sceneIndex);
+    }
+    //pauses and unpauses game, depending on state
+    public void PauseUnPause()
+    {
+        if (Time.timeScale == 1)
+        {
+            Time.timeScale = 0;
+        }
+        else
+        {
+            Time.timeScale = 1;
+        }
     }
 }
