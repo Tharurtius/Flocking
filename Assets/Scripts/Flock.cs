@@ -82,4 +82,10 @@ public class Flock : MonoBehaviour
 
         return context;
     }
+
+    public void EatSheep(GameObject sheep)
+    {
+        agents.Remove(sheep.GetComponent<FlockAgent>());
+        Destroy(sheep);
+    }
 }
