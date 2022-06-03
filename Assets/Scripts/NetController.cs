@@ -12,14 +12,14 @@ public class NetController : MonoBehaviour
         if (Input.GetAxis("Horizontal") != 0)
         {
             Vector3 rotation = gameObject.transform.rotation.eulerAngles;
-            rotation.z -= Input.GetAxis("Horizontal");
+            rotation.z -= (Input.GetAxis("Horizontal") / 2);
             gameObject.transform.rotation = Quaternion.Euler(rotation);
         }
         Vector3 finalPos = transform.position + transform.up * Time.deltaTime * speed;
         //press W to double speed
         if (Input.GetAxisRaw("Vertical") == 1)
         {
-            finalPos += transform.up * Time.deltaTime * speed;
+            finalPos += transform.up * Time.deltaTime * speed * 2;
         }
         //Debug.Log(finalPos.magnitude);
         if (finalPos.magnitude < 40)
