@@ -7,12 +7,20 @@ public class NetController : MonoBehaviour
     public float speed;
     public GameObject sheepHerd;
     public GameObject wolfPack;
+    public float turnSpeed;
     void Update()
     {
         if (Input.GetAxis("Horizontal") != 0)
         {
             Vector3 rotation = gameObject.transform.rotation.eulerAngles;
-            rotation.z -= (Input.GetAxis("Horizontal") / 2);
+            if (Input.GetAxisRaw("Vertical") == -1)
+            {
+                rotation.z -= (Input.GetAxis("Horizontal") / 2);
+            }
+            else
+            {
+                rotation.z -= (Input.GetAxis("Horizontal") / 4);
+            }
             gameObject.transform.rotation = Quaternion.Euler(rotation);
         }
         Vector3 finalPos = transform.position + transform.up * Time.deltaTime * speed;
@@ -20,6 +28,10 @@ public class NetController : MonoBehaviour
         if (Input.GetAxisRaw("Vertical") == 1)
         {
             finalPos += transform.up * Time.deltaTime * speed * 2;
+        }
+        else if (Input.GetAxisRaw("Vertical") == -1)
+        {
+            finalPos -= transform.up * Time.deltaTime * speed / 2;
         }
         //Debug.Log(finalPos.magnitude);
         if (finalPos.magnitude < 40)
