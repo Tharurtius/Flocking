@@ -21,15 +21,18 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        //pause game
         if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P))
         {
             ShowPauseMenu();
         }
+        //updates score
         scoreKeeper.GetComponent<Text>().text = "Score: " + score;
+        //end game when out of "sheep"
         if (sheepHerd.GetComponent<Flock>().agents.Count == 0 && !pauseMenu.activeSelf)
         {
             ShowPauseMenu();
-            pauseText.GetComponent<Text>().text = "Score: " + GameManager.score;
+            pauseText.GetComponent<Text>().text = "Score: " + GameManager.score;//this gets reset on scene change, no need to change it back
         }
     }
     void ShowPauseMenu()
@@ -39,6 +42,7 @@ public class GameManager : MonoBehaviour
         //open and close menu
         pauseMenu.SetActive(!pauseMenu.activeSelf);
     }
+    //used in quit button to reset score
     public void ResetScore()
     {
         GameManager.score = 0;

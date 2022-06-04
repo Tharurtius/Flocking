@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+//generic menu script, intended to be usable in any project
 public class GMenuScript : MonoBehaviour
 {
     // Start is called before the first frame update
